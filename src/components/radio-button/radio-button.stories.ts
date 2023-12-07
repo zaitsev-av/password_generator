@@ -17,6 +17,22 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
-    text: 'Button',
+    items: [
+      {
+        id: '1',
+        label: 'One',
+        value: 'one',
+      },
+      {
+        id: '2',
+        label: 'Two',
+        value: 'two',
+      },
+      {
+        id: '3',
+        label: 'Three',
+        value: 'three',
+      },
+    ],
   },
 }

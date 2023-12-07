@@ -6,12 +6,18 @@ import { clsx } from 'clsx'
 
 import s from './radio-button.module.scss'
 
+export type RadioGroupItemType = {
+  id: string
+  label: string
+  value: string
+}
+
 interface Props {
-  text: string
+  items: RadioGroupItemType[]
 }
 
 export const RadioButton: FC<Props> = props => {
-  const { text } = props
+  const { items } = props
 
   const cn = {
     root: clsx(s.root),
@@ -21,7 +27,9 @@ export const RadioButton: FC<Props> = props => {
     <form>
       <RadioGroup.Root className={cn.root} defaultValue={'default'}>
         <div style={{ alignItems: 'center', display: 'flex' }}>
-          <RadioButtonItem id={'1r'} label={text} value={'1'} />
+          {items.map(el => (
+            <RadioButtonItem id={el.id} label={el.label} value={el.value} />
+          ))}
         </div>
       </RadioGroup.Root>
     </form>

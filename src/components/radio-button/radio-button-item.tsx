@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import { Typography } from '@/components/typography/typography'
-import { EFontSize, EFontWeight } from '@/utils/enums'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 import { clsx } from 'clsx'
 
@@ -30,13 +29,7 @@ export const RadioButtonItem: FC<Props> = props => {
         <RadioGroup.Indicator className={s.indicator} />
       </RadioGroup.Item>
       <label htmlFor={id}>
-        <Typography
-          className={cn.label}
-          fontSize={EFontSize['18px']}
-          fontWeight={EFontWeight.ExtraBold}
-        >
-          {label}
-        </Typography>
+        <Typography className={cn.label}>{label}</Typography>
       </label>
     </div>
   )
