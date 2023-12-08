@@ -5,24 +5,23 @@
 
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 
   height: 25px;
   padding: 0 35px 0 25px;
 
-  font-size: 13px;
-  line-height: 1;
   color: var(--color-light-100);
 
   border-radius: 3px;
-}
 
-.item[data-disabled] {
-  pointer-events: none;
-  color: red;
-}
+  &[data-disabled] {
+    pointer-events: none;
+    color: var(--color-danger-100);
+  }
 
-.item[data-highlighted] {
-  color: blue;
-  background-color: violet;
-  outline: none;
+  &[data-highlighted] {
+    color: var(--color-light-100);
+    background-color: var(--color-dark-700);
+    outline: none;
+  }
 }

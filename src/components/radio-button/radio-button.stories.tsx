@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react'
 
 import { JSX, useState } from 'react'
 
-import { RadioButton, RadioGroupItemType } from './radio-button'
+import { RadioButton, RadioGroupItemType } from '@/components'
 
 const meta = {
   args: {

@@ -38,7 +38,7 @@ button {
       }
 
       &:hover {
-        transform: scale(1.04);
+        box-shadow: 0 0 6px var(--color-danger-100);
       }
 
       &:focus-visible {

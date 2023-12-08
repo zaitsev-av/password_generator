@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { Typography } from '@/components/typography/typography'
+import { Label } from '@/components/label'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 import { clsx } from 'clsx'
 
@@ -28,9 +28,7 @@ export const RadioButtonItem: FC<Props> = props => {
       <RadioGroup.Item className={cn.item} id={id} value={value}>
         <RadioGroup.Indicator className={s.indicator} />
       </RadioGroup.Item>
-      <label htmlFor={id}>
-        <Typography className={cn.label}>{label}</Typography>
-      </label>
+      <Label className={cn.label} id={id} label={label} />
     </div>
   )
 }

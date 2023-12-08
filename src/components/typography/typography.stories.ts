@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Typography } from '@/components/typography/typography'
+import { Typography } from '@/components'
 import { EFontSize, EFontWeight } from '@/utils/enums'
 
 const meta = {

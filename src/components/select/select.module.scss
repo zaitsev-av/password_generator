@@ -3,10 +3,12 @@ button {
 }
 
 .trigger {
+  user-select: none;
+
   display: inline-flex;
   gap: 5px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 
   height: 35px;
   padding: 0 15px;
@@ -17,23 +19,45 @@ button {
 
   background: #051f30;
   border-radius: 4px;
-  box-shadow: 0 2px 10px var(--color-danger-100);
+
+  //box-shadow: 0 2px 10px var(--color-danger-100);
 
   &:hover {
-    background-color: grey;
+    box-shadow: 0 0 6px var(--color-danger-100);
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 2px black;
+    box-shadow: 0 0 0 2px var(--color-info-100);
   }
 
   &[data-placeholder] {
-    color: green;
+    color: var(--color-light-100);
+  }
+
+  .icon {
+    transition: transform 0.3s ease;
+
+    &[data-state='disabled'] {
+      color: var(--color-dark-300);
+    }
+  }
+
+  &[data-state='open'] {
+    border: 1px solid var(--color-dark-100);
+
+    .icon {
+      transform: rotate(180deg);
+    }
   }
 }
 
 .content {
+  all: unset;
+
   overflow: hidden;
+
+  min-width: var(--radix-select-trigger-width);
+
   background: linear-gradient(#051f30, #313030);
   border-radius: 6px;
   box-shadow:
