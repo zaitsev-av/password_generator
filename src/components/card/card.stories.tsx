@@ -18,10 +18,25 @@ export default meta
 
 export const Default: () => JSX.Element = () => {
   return (
-    <Card>
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto dolorem explicabo
-      illum nam nisi non provident quia, repellendus. Alias ea impedit nemo obcaecati omnis, sint
-      suscipit totam velit veritatis!',
+    <Card style={{display: "flex",flexDirection: "column", gap: '15px'}}>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+       <div>Animi architecto dolorem explicabo</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+      <div>illum nam nisi non provident quia, repellendus.</div>
+       <div>Alias ea impedit nemo obcaecati omnis, sint
+      suscipit totam velit veritatis!</div>
     </Card>
   )
 }

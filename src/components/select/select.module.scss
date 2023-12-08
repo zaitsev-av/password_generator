@@ -5,7 +5,7 @@ button {
 .trigger {
   user-select: none;
 
-  display: inline-flex;
+  display: flex;
   gap: 5px;
   align-items: center;
   justify-content: space-around;
@@ -43,7 +43,7 @@ button {
   }
 
   &[data-state='open'] {
-    border: 1px solid var(--color-dark-100);
+    box-shadow: 0 0 1px var(--color-dark-100);
 
     .icon {
       transform: rotate(180deg);
@@ -55,6 +55,7 @@ button {
   all: unset;
 
   overflow: hidden;
+  opacity: 0.8;
 
   min-width: var(--radix-select-trigger-width);
 

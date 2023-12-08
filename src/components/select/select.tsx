@@ -7,7 +7,7 @@ import * as SelectRdx from '@radix-ui/react-select'
 
 import s from './select.module.scss'
 
-type SelectItemsType = {
+export type SelectItemsType = {
   id: string
   name: string
 }

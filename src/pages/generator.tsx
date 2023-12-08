@@ -1,55 +1,17 @@
-import { FC, useState } from 'react'
+import {FC, useState} from 'react'
 
-import { Select } from '@/components'
-import { Card } from '@/components/card'
-import { RadioButton, RadioGroupItemType } from '@/components/radio-button/radio-button'
+import {Select} from '@/components'
+import {Card} from '@/components/card'
+import {RadioButton} from '@/components/radio-button/radio-button'
+import {digitCount, passwordLength, specialCharacters} from "@/utils/settingsData";
 
 interface Props {}
 export const Generator: FC<Props> = props => {
   const {} = props
-  const items: RadioGroupItemType[] = [
-    {
-      id: '1',
-      label: 'One',
-      value: 'one',
-    },
-    {
-      id: '2',
-      label: 'Two',
-      value: 'two',
-    },
-    {
-      id: '3',
-      label: 'Three',
-      value: 'three',
-    },
-  ]
 
-  const itemsSelect = [
-    {
-      id: '1',
-      name: '5',
-    },
-    {
-      id: '2',
-      name: '8',
-    },
-    {
-      id: '3',
-      name: '12',
-    },
-    {
-      id: '4',
-      name: '15',
-    },
-    {
-      id: '5',
-      name: '20',
-    },
-  ]
-
-  const [value, setValue] = useState('one')
-  const [valueSelect, setValueSelect] = useState(itemsSelect[0].name)
+  const [digitCountValue, setDigitCountValue] = useState('1')
+  const [passwordLengthValue, setPasswordLengthValue] = useState('1')
+  const [valueSelect, setValueSelect] = useState(passwordLength[0].name)
 
   const onChangeHandler = (value: string) => {
     setValueSelect(value)
@@ -63,23 +25,42 @@ export const Generator: FC<Props> = props => {
         flexDirection: 'column',
         gap: '15px',
         left: '50%',
-        position: 'absolute',
+        position: 'relative',
         top: '40%',
+        marginTop: '200px'
       }}
     >
       <Card>
         <RadioButton
-          items={items}
+          items={digitCount}
           label={'Количество цифр в пароле:'}
-          onChange={setValue}
-          value={value}
+          onChange={setDigitCountValue}
+          value={digitCountValue}
         />
         <Select
-          items={itemsSelect}
+          items={passwordLength}
           label={'Длинна пароля'}
           onChange={onChangeHandler}
           value={valueSelect}
         />
+        <RadioButton
+          items={specialCharacters}
+          label={'Количество специальных символов в пароле:'}
+          onChange={setPasswordLengthValue}
+          value={passwordLengthValue}
+        />
+        {/*<RadioButton*/}
+        {/*  items={digitCount}*/}
+        {/*  label={'Количество цифр в пароле:'}*/}
+        {/*  onChange={setValue}*/}
+        {/*  value={value}*/}
+        {/*/>*/}
+        {/*<RadioButton*/}
+        {/*  items={digitCount}*/}
+        {/*  label={'Количество цифр в пароле:'}*/}
+        {/*  onChange={setValue}*/}
+        {/*  value={value}*/}
+        {/*/>*/}
       </Card>
     </div>
   )
