@@ -26,14 +26,18 @@ option {
 }
 
 body {
+  scrollbar-gutter: stable;
+
+  overflow: auto;
+
   margin: 0;
   padding: 0;
 
   font-family: 'Jacques Francois', sans-serif;
   color: var(--color-light-100);
-  scrollbar-gutter: stable;
-  overflow: auto;
-  background-color: var(--color-dark-700);
+
+  background-color: #051f30;
+  box-shadow: 8px 0 9px 0 #00000014;
 }
 
 ::selection {

@@ -13,22 +13,30 @@ export type RadioGroupItemType = {
 }
 
 interface Props {
+  className?: string
   items: RadioGroupItemType[]
+  onChange?: (value: string) => void
+  value?: string
 }
 
 export const RadioButton: FC<Props> = props => {
-  const { items } = props
+  const { className, items, onChange, value } = props
 
   const cn = {
-    root: clsx(s.root),
+    root: clsx(s.root, className),
   }
 
   return (
     <form>
-      <RadioGroup.Root className={cn.root} defaultValue={'default'}>
+      <RadioGroup.Root
+        className={cn.root}
+        defaultValue={'default'}
+        onValueChange={onChange}
+        value={value}
+      >
         <div style={{ alignItems: 'center', display: 'flex' }}>
           {items.map(el => (
-            <RadioButtonItem id={el.id} label={el.label} value={el.value} />
+            <RadioButtonItem id={el.id} key={el.id} label={el.label} value={el.value} />
           ))}
         </div>
       </RadioGroup.Root>

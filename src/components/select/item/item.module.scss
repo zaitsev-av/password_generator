@@ -1,0 +1,28 @@
+.item {
+  user-select: none;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: 25px;
+  padding: 0 35px 0 25px;
+
+  font-size: 13px;
+  line-height: 1;
+  color: var(--color-light-100);
+
+  border-radius: 3px;
+}
+
+.item[data-disabled] {
+  pointer-events: none;
+  color: red;
+}
+
+.item[data-highlighted] {
+  color: blue;
+  background-color: violet;
+  outline: none;
+}
