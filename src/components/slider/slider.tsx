@@ -1,6 +1,7 @@
 import * as SliderRDX from '@radix-ui/react-slider';
 import s from './slider.module.scss'
 import {FC} from "react";
+import {Label} from "@/components";
 
 
 interface Props {
@@ -10,14 +11,15 @@ interface Props {
   min?: number
   max?: number
   step?: number
+  label?: string
 }
 
 export const Slider: FC<Props> = (props) => {
-  //todo: закончить слайдер
-  const {min = 0, max = 38, defaultValue = [12], value, onChange, step = 1} = props
+  const {min = 0, max = 50, defaultValue = [12], value, onChange, step = 1, label} = props
   return (
-    <form>
-      <SliderRDX.Root className={s.root} defaultValue={defaultValue} max={max} step={step} value={value}
+    <form style={{display: "flex", alignItems: "center", justifyContent: "center", gap: '15px'}}>
+      {label && <Label label={label}/>}
+      <SliderRDX.Root className={s.root} defaultValue={defaultValue} min={min} max={max} step={step} value={value}
                       onValueChange={onChange}>
         <SliderRDX.Track className={s.track}>
           <SliderRDX.Range className={s.range}/>

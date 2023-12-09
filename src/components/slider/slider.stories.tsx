@@ -15,7 +15,7 @@ const meta = {
 export default meta
 
 export const Default: () => JSX.Element = () => {
-  const [values, setValues] = useState<[number]>([50])
+  const [values, setValues] = useState<[number]>([12])
 
   const changeSliderValues = (values: [number]) => {
     setValues(values)
@@ -23,5 +23,18 @@ export const Default: () => JSX.Element = () => {
   }
   return (
    <Slider value={values} onChange={changeSliderValues}/>
+  )
+}
+
+
+export const WithLabel: () => JSX.Element = () => {
+  const [values, setValues] = useState<[number]>([12])
+
+  const changeSliderValues = (values: [number]) => {
+    setValues(values)
+    console.log(values)
+  }
+  return (
+    <Slider value={values} onChange={changeSliderValues} label={'Slider with label'}/>
   )
 }
