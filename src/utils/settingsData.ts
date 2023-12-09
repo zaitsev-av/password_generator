@@ -3,36 +3,26 @@ import {RadioGroupItemType, SelectItemsType} from "@/components";
 export const digitCount: RadioGroupItemType[] = [
   {
     id: '1',
-    label: 'One',
+    label: 'Yes',
     value: '1',
   },
   {
     id: '2',
-    label: 'Two',
+    label: 'No',
     value: '2',
-  },
-  {
-    id: '3',
-    label: 'Three',
-    value: '3',
   },
 ]
 
 export const specialCharacters: RadioGroupItemType[] = [
   {
     id: '1',
-    label: 'One',
+    label: 'Yes',
     value: '1',
   },
   {
     id: '2',
-    label: 'Two',
+    label: 'No',
     value: '2',
-  },
-  {
-    id: '3',
-    label: 'Three',
-    value: '3',
   },
 ]
 
