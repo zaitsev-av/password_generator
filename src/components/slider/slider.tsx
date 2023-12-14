@@ -1,31 +1,41 @@
-import * as SliderRDX from '@radix-ui/react-slider';
-import s from './slider.module.scss'
-import {FC} from "react";
-import {Label} from "@/components";
+import { FC } from 'react'
 
+import { Label } from '@/components'
+import * as SliderRDX from '@radix-ui/react-slider'
+
+import s from './slider.module.scss'
 
 interface Props {
-  value?: [number]
-  onChange?: (value: [number]) => void
   defaultValue?: number[]
-  min?: number
-  max?: number
-  step?: number
   label?: string
+  max?: number
+  min?: number
+  onChange?: (value: [number]) => void
+  step?: number
+  value?: [number]
 }
 
-export const Slider: FC<Props> = (props) => {
-  const {min = 0, max = 50, defaultValue = [12], value, onChange, step = 1, label} = props
+export const Slider: FC<Props> = props => {
+  const { defaultValue = [12], label, max = 50, min = 0, onChange, step = 1, value } = props
+
   return (
-    <form style={{display: "flex", alignItems: "center", justifyContent: "center", gap: '15px'}}>
-      {label && <Label label={label}/>}
-      <SliderRDX.Root className={s.root} defaultValue={defaultValue} min={min} max={max} step={step} value={value}
-                      onValueChange={onChange}>
+    <form style={{ alignItems: 'center', display: 'flex', gap: '15px', justifyContent: 'center' }}>
+      {label && <Label label={label} />}
+      <SliderRDX.Root
+        className={s.root}
+        defaultValue={defaultValue}
+        max={max}
+        min={min}
+        onValueChange={onChange}
+        step={step}
+        value={value}
+      >
         <SliderRDX.Track className={s.track}>
-          <SliderRDX.Range className={s.range}/>
+          <SliderRDX.Range className={s.range} />
         </SliderRDX.Track>
-        <SliderRDX.Thumb className={s.thumb} aria-label="Volume"/>
+        <SliderRDX.Thumb aria-label={'Volume'} className={s.thumb} />
       </SliderRDX.Root>
+      <div>{value}</div>
     </form>
   )
-};
+}

@@ -4,7 +4,7 @@ const CHARACTERS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max)
 }
-const generateRandomString = (length: number) => {
+export const generateRandomString = (length: number) => {
   let result = ''
 
   for (let i = 0; i < length; i++) {
@@ -12,4 +12,8 @@ const generateRandomString = (length: number) => {
   }
 
   return result
+}
+
+export const stringToArray = (str: string) => {
+  return str.split('')
 }
