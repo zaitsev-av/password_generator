@@ -1,0 +1,33 @@
+.root {
+    all: unset;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 0 solid transparent;
+    background-color: rgba(100,77,237,0.08);
+    border-radius: 18px;
+    transition: all 0.2s linear;
+    gap: 5px;
+
+  &:hover {
+    box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.025),
+    9px 7px 13px rgba(0, 0, 0, 0.035),
+    18px 13px 25px rgba(0, 0, 0, 0.045),
+    36px 26px 52px rgba(0, 0, 0, 0.055),
+    99px 72px 143px rgba(0, 0, 0, 0.08);
+  }
+
+  .text {
+    all: unset;
+
+    padding: 10px;
+  }
+
+  .icon {
+    all: unset;
+  }
+
+}
+
