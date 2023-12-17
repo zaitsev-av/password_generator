@@ -1,18 +1,14 @@
-import {Component, ComponentProps, ElementType, FC, HTMLAttributes, ReactNode} from "react";
+import {Component, ComponentProps, ElementType, ReactNode} from "react";
 import s from './button.module.scss'
 import {clsx} from "clsx";
 
 //compound components pattern
 
-interface Props {
-  // Icon?: FC<ButtonIcon>;
-};
-
 type ButtonIcon<T extends ElementType= 'span'> = {
   as?: T
   children: ReactNode
   className?: string
-}
+} & ComponentProps<T>
 
 function Icon ({children, as = Component = 'span', className, ...root}: ButtonIcon ) {
 
@@ -29,9 +25,11 @@ type ButtonText<T extends ElementType = 'p'>  = {
   className?: string
 }
 function Text ({children, as: Component = 'p', className, ...root }: ButtonText) {
+
   const cn = {
     text: clsx(s.text, className ? className : '')
   }
+
   return <Component className={cn.text} {...root}>{children}</Component>;
 }
 

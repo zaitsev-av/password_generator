@@ -26,7 +26,8 @@ export const WithIcon: () => JSX.Element = () => {
 
   return (
     <Button.Root>
-      <Button.Icon> <HomeIcon/> </Button.Icon>
+     <HomeIcon/>
+      <Button.Text>{'some text'}</Button.Text>
     </Button.Root>
   )
 }

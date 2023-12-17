@@ -1,9 +1,11 @@
-import { FC, useState } from 'react'
+import {FC, useState} from 'react'
 
-import { PasswordInputItem } from '@/components/password-input-group/password-input-item/password-input-item'
-import { stringToArray } from '@/utils'
+import {PasswordInputItem} from '@/components/password-input-group/password-input-item/password-input-item'
+import {stringToArray} from '@/utils'
 
 import s from './password-input-group.module.scss'
+import {Button} from "@/components/button/button";
+import {NotVisibleIcon, VisibleIcon} from "@/assets/icons";
 
 interface Props {
   value: string
@@ -27,7 +29,27 @@ export const PasswordInputGroup: FC<Props> = props => {
           value={el}
         />
       ))}
-      <button onClick={handleShowPassword}>{showPassword ? 'Глаз' : 'Зачеркнуть глаз'}</button>
+      <PassButton showPassword={showPassword} onClick={handleShowPassword}/>
     </div>
   )
+}
+
+interface IPassButton {
+  showPassword: boolean
+  onClick: ()=> void
+}
+
+const PassButton: FC<IPassButton> = ({showPassword, onClick}) => {
+  return <>
+    {showPassword
+      ?
+      <Button.Root onClick={onClick}>
+         <VisibleIcon/>
+      </Button.Root>
+      :
+      <Button.Root onClick={onClick}>
+        <NotVisibleIcon/>
+      </Button.Root>
+    }
+  </>
 }
