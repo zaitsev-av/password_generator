@@ -41,7 +41,7 @@ export const Generator: FC<Props> = props => {
       <Card
         style={{ alignItems: 'flex-start', display: 'flex', flexDirection: 'column', gap: '15px' }}
       >
-        <Slider label={'Количество цифр в пароле:'} onChange={changeSliderValues} value={values} />
+        <Slider label={'Количество символов в пароле:'} onChange={changeSliderValues} value={values} />
 
         <RadioButton
           items={digitCount}
@@ -57,7 +57,7 @@ export const Generator: FC<Props> = props => {
         />
         <Select
           items={passwordLength}
-          label={'Длинна пароля'}
+          label={'Длина пароля'}
           onChange={onChangeHandler}
           value={valueSelect}
         />
