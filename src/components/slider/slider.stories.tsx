@@ -1,7 +1,8 @@
-import type {Meta} from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
-import {JSX, useState} from 'react'
-import {Slider} from "@/components/slider/slider";
+import { JSX, useState } from 'react'
+
+import { Slider } from '@/components/slider/slider'
 
 const meta = {
   component: Slider,
@@ -21,11 +22,9 @@ export const Default: () => JSX.Element = () => {
     setValues(values)
     console.log(values)
   }
-  return (
-   <Slider value={values} onChange={changeSliderValues}/>
-  )
-}
 
+  return <Slider onChange={changeSliderValues} value={values} />
+}
 
 export const WithLabel: () => JSX.Element = () => {
   const [values, setValues] = useState<[number]>([12])
@@ -34,7 +33,6 @@ export const WithLabel: () => JSX.Element = () => {
     setValues(values)
     console.log(values)
   }
-  return (
-    <Slider value={values} onChange={changeSliderValues} label={'Slider with label'}/>
-  )
+
+  return <Slider label={'Slider with label'} onChange={changeSliderValues} value={values} />
 }
