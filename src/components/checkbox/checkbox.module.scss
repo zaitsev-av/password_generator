@@ -3,26 +3,28 @@ button {
 }
 
 .root {
-  background-color: #525252;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
 
+  width: 20px;
+  height: 20px;
+
+  background-color: #525252;
+  border-radius: 4px;
   box-shadow:
-          hsl(0deg 0% 100% / 15%) 0 1px 2px,
-          inset hsl(0deg 0% 0% / 50%) 0 0 0 2px;
+    hsl(0deg 0% 100% / 15%) 0 1px 2px,
+    inset hsl(0deg 0% 0% / 50%) 0 0 0 2px;
+
   &:hover {
     box-shadow: 0 0 6px var(--color-danger-100);
   }
+
   &:focus-visible {
     box-shadow: 0 0 0 2px var(--color-info-300);
   }
 
   .indicator {
     color: var(--color-danger-100);
-
   }
 }

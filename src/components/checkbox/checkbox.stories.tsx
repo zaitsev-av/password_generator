@@ -1,11 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
-import { PasswordInputGroup } from '@/components/password-input-group/password-input-group'
-import Checkbox from "@/components/checkbox/checkbox";
+import { JSX, useState } from 'react'
+
+import { Checkbox } from '@/components/checkbox/checkbox'
 
 const meta = {
   args: {
-    //value: 'Value!fs12fcqw12',
+    checked: true,
+    label: 'With label',
   },
   component: Checkbox,
   parameters: {
@@ -16,12 +18,39 @@ const meta = {
 } satisfies Meta<typeof Checkbox>
 
 export default meta
-type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: args => (
+export const Default: () => JSX.Element = () => {
+  const [checked, onChangeChecked] = useState(false)
+
+  const handler = () => {
+    console.log(checked)
+    onChangeChecked(prevState => !prevState)
+  }
+
+  return (
     <>
-      <Checkbox/>
+      <Checkbox checked={checked} onChange={handler} />
     </>
-  ),
+  )
+}
+//ts-ignore
+export const WithLabel: () => JSX.Element = () => {
+  const [checked, onChangeChecked] = useState(false)
+
+  const handler = () => {
+    console.log(checked)
+    onChangeChecked(prevState => !prevState)
+  }
+
+  return (
+    <>
+      <Checkbox
+        checked={checked}
+        className={''}
+        disabled={false}
+        label={meta.args.label}
+        onChange={handler}
+      />
+    </>
+  )
 }
