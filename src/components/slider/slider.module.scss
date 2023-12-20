@@ -1,3 +1,5 @@
+@import 'src/styles/mixins';
+
 .root {
   touch-action: none;
   user-select: none;
@@ -38,10 +40,13 @@
     border-radius: 10px;
 
     &:hover {
-      background-color: var(--color-danger-300);
+      transform: scale(1.2);
+      transition: transform 0.3s;
     }
 
     &:focus-visible {
+      @include animation-for-focus;
+
       outline: none;
       box-shadow: 0 0 0 2px var(--color-info-100);
     }

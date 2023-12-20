@@ -1,3 +1,5 @@
+@import 'src/styles/mixins';
+
 .root {
   all: unset;
 
@@ -21,6 +23,12 @@
       18px 13px 25px rgb(0 0 0 / 4.5%),
       36px 26px 52px rgb(0 0 0 / 5.5%),
       99px 72px 143px rgb(0 0 0 / 8%);
+  }
+
+  &:focus-visible {
+    @include animation-for-focus;
+
+    box-shadow: 0 0 0 2px var(--color-info-100);
   }
 
   .text {

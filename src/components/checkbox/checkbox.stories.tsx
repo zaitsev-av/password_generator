@@ -44,13 +44,7 @@ export const WithLabel: () => JSX.Element = () => {
 
   return (
     <>
-      <Checkbox
-        checked={checked}
-        className={''}
-        disabled={false}
-        label={meta.args.label}
-        onChange={handler}
-      />
+      <Checkbox checked={checked} disabled={false} label={meta.args.label} onChange={handler} />
     </>
   )
 }

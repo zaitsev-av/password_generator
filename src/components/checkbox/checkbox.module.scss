@@ -1,3 +1,5 @@
+@import 'src/styles/mixins';
+
 button {
   all: unset;
 }
@@ -17,11 +19,15 @@ button {
     inset hsl(0deg 0% 0% / 50%) 0 0 0 2px;
 
   &:hover {
+    @include animation-for-focus;
+
     box-shadow: 0 0 6px var(--color-danger-100);
   }
 
   &:focus-visible {
-    box-shadow: 0 0 0 2px var(--color-info-300);
+    @include animation-for-focus;
+
+    box-shadow: 0 0 0 2px var(--color-info-100);
   }
 
   .indicator {
