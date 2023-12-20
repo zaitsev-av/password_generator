@@ -19,7 +19,7 @@ export const Slider: FC<Props> = props => {
   const { defaultValue = [12], label, max = 50, min = 0, onChange, step = 1, value } = props
 
   return (
-    <form style={{ alignItems: 'center', display: 'flex', gap: '15px', justifyContent: 'center' }}>
+    <div className={s.box}>
       {label && <Label label={label} />}
       <SliderRDX.Root
         className={s.root}
@@ -35,7 +35,7 @@ export const Slider: FC<Props> = props => {
         </SliderRDX.Track>
         <SliderRDX.Thumb aria-label={'Volume'} className={s.thumb} />
       </SliderRDX.Root>
-      <div>{value}</div>
-    </form>
+      <div className={s.counter}>{value}</div>
+    </div>
   )
 }

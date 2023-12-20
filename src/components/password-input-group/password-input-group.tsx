@@ -1,33 +1,30 @@
-import { FC, useState } from 'react'
+import { ComponentPropsWithoutRef, ElementType, FC, useState } from 'react'
 
 import { NotVisibleIcon, VisibleIcon } from '@/assets/icons'
 import { Button } from '@/components/button/button'
-import { PasswordInputItem } from '@/components/password-input-group/password-input-item/password-input-item'
 
 import s from './password-input-group.module.scss'
 
-interface Props {
+type Props<T extends ElementType = 'input'> = ComponentPropsWithoutRef<T> & {
+  as?: T
   value: string
 }
-export const PasswordInputGroup: FC<Props> = props => {
-  const { value } = props
+const PasswordInputGroup = <T extends ElementType = 'input'>({ as, value, ...rest }: Props<T>) => {
   const [showPassword, setShowPassword] = useState(false)
-
+  const Input = as || 'input'
   const handleShowPassword = () => {
     setShowPassword(prevState => !prevState)
   }
 
   return (
     <div className={s.password}>
-      <PasswordInputItem
-        onChange={() => {}}
-        type={showPassword ? 'text' : 'password'}
-        value={value}
-      />
-      <PassButton onClick={handleShowPassword} showPassword={showPassword} />
+      <Input {...rest} className={s.item} type={showPassword ? 'text' : 'password'} value={value} />
+      {value && <PassButton onClick={handleShowPassword} showPassword={showPassword} />}
     </div>
   )
 }
+
+export default PasswordInputGroup
 
 interface IPassButton {
   onClick: () => void
